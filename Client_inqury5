@@ -10,8 +10,8 @@ SELECT
     SUM(yammer_events.user_type) AS total_events,
     SUM(yammer_events.user_type) / COUNT(DISTINCT yammer_events.user_id) AS avg_events_per_user
 FROM
-    tutorial.yammer_events yammer_events
-    JOIN tutorial.yammer_experiments yammer_experiments ON yammer_events.user_id = yammer_experiments.user_id
+    yammer_tut.yammer_events yammer_events
+    JOIN yammer_tut.yammer_experiments yammer_experiments ON yammer_events.user_id = yammer_experiments.user_id
 WHERE
     yammer_events.device IN ('phone', 'tablet', 'amazon fire phone', 'nexus 10', 'ipad mini', 'windows surface', 'samsumg galaxy tablet', 'iphone 5', 'nexus 7', 'kindle fire', 'iphone 5s', 'nexus 5', 'htc one', 'iphone 4s', 'samsung galaxy note', 'nokia lumia 635', 'ipad air', 'samsung galaxy s4')
    OR yammer_experiments.device IN ('Desktop', 'Laptop', 'Notebook', 'dell inspiron desktop', 'asus chromebook', 'macbook air', 'lenovo thinkpad', 'mac mini', 'acer aspire desktop', 'acer aspire notebook', 'dell inspiron notebook', 'macbook pro', 'hp pavilion desktop')

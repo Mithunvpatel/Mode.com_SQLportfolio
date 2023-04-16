@@ -13,8 +13,8 @@ FROM
   (SELECT 
     *
   FROM 
-    tutorial.yammer_emails e
-    INNER JOIN tutorial.yammer_users u ON e.user_id = u.user_id
+    yammer_tut.yammer_emails e
+    INNER JOIN yammer_tut.yammer_users u ON e.user_id = u.user_id
   WHERE 
     e.user_type = 2
     AND e.occurred_at >= '2014-06-23' AND e.occurred_at < '2014-06-30') AS a;

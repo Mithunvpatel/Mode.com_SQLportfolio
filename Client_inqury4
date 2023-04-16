@@ -11,8 +11,8 @@ WITH before_exp AS (
     a.user_id,
     COUNT(DISTINCT a.occurred_at::DATE) AS days_engaged,
     COUNT(*) AS num_engagements_before
-  FROM tutorial.yammer_events a
-  JOIN tutorial.yammer_experiments b
+  FROM yammer_tut.yammer_events a
+  JOIN yammer_tut.yammer_experiments b
   ON a.user_id = b.user_id
   WHERE a.event_type = 'engagement'
     AND a.occurred_at::DATE < b.occurred_at::DATE
@@ -24,8 +24,8 @@ after_exp AS (
     a.user_id,
     COUNT(DISTINCT a.occurred_at::DATE) AS days_engaged,
     COUNT(*) AS num_engagements_after
-  FROM tutorial.yammer_events a
-  JOIN tutorial.yammer_experiments b
+  FROM yammer_tut.yammer_events a
+  JOIN yammer_tut.yammer_experiments b
   ON a.user_id = b.user_id
   WHERE a.event_type = 'engagement'
     AND a.occurred_at::DATE >= b.occurred_at::DATE
