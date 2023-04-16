@@ -4,8 +4,8 @@
 SELECT COUNT(DISTINCT company_id)
 FROM 
 (SELECT *
-FROM tutorial.yammer_users a
-JOIN tutorial.yammer_experiments b
+FROM yammer_tut.yammer_users a
+JOIN yammer_tut.yammer_experiments b
 ON a.user_id = b.user_id ) as dd
 
 WHERE experiment = 'publisher_update'
