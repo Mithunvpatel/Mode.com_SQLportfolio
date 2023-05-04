@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.stats as stats
 
-# Define the control and test groups
+# Define the control and test groups from Example_inquiry5
 control_group = [15.0, 27.0, 11.0, 16.0]
 test_group = [14.666666666666700, 13.0, 50.0, 19.666666666666700]
 
